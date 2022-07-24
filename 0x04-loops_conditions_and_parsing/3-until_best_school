@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# printing "Best School" with an until loop
+
+i=0
+LIMIT=10
+text="Best School"
+
+until [ $i -eq $LIMIT ]
+do
+	echo "$text"
+	i=$(( i + 1 ))
+done
