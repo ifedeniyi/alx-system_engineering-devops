@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+
+i=0
+LIMIT=10
+text="Best School"
+
+while [ $i -lt $LIMIT ]
+do
+	echo "$text"
+	if [ $i -eq 8 ]
+	then
+		echo "Hi"
+	fi
+	i=$((i+1))
+done
