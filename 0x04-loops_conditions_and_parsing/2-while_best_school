@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# print "Best school" using while loop
+
+i=0
+LIMIT=10
+text="Best School"
+
+while [ $i -lt $LIMIT ]
+do
+	echo "$text"
+	i=$(("$i" + 1))
+done
