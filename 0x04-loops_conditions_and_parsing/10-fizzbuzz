@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Implementing FizzBuzz
+
+limit=100
+i=1
+
+while [ $i -le $limit ] ; do
+	mo3=$(( i % 3 ))
+	mo5=$(( i % 5 ))
+
+	if [ "$mo3" -eq 0 ] && [ "$mo5" -eq 0 ] ; then
+		echo "FizzBuzz"
+	elif [ "$mo3" -eq 0 ] ; then
+		echo "Fizz"
+	elif [ "$mo5" -eq 0 ] ; then
+		echo "Buzz"
+	else
+		echo "$i"
+	fi
+	i=$(( i + 1 ))
+done
