@@ -10,7 +10,7 @@ i=0
 while [ $i -le "$hrs" ]
 do
 	j=1
-	echo "Hours: $i"
+	echo "Hour: $i"
 
 	while [ $j -lt "$mins" ]
 	do
