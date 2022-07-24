@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+text="Best School"
+
+for _ in $(seq 10) ; do echo "$text" ; done
