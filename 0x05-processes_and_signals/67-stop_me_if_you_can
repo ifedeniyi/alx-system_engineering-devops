@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Write a Bash script that stops 7-highlander process.
+# Write a Bash script that stops (SIGTERM) 7-highlander process.
 # Requirements:
 #    You cannot use kill of killall
 
