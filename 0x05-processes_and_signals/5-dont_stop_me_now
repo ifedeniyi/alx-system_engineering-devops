@@ -3,7 +3,7 @@
 # Requirements:
 #    You must use kill
 
-TARGET=$(ps a | grep 'bash.*infinity.*' | awk '{print $1}' | head -n 1)
+TARGET=$(pgrep "bash.*infinity.*" -f | head -n 1)
 
 if [[ -n $TARGET ]]; then
 	kill "$TARGET"
