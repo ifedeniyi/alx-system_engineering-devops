@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that prints some information about /rc/passwd.
+# A Bash script that displays the content of the file /etc/passwd.
 FILE=/etc/passwd
 while read -r p
 do
