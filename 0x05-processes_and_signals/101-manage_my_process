@@ -20,12 +20,12 @@
 pid_file="/var/run/my_process.pid"
 
 function start_p {
-	$(./manage_my_process &)
-	pgrep ".*manage_my_process.*" -f | head -n 1 >$pid_file
+	./manage_my_process &
+	pgrep "bash.*\.\/manage.*" -f | head -n 1 >$pid_file
 }
 
 function kill_p {
-	pkill -9 ".*manage_my_process.*" -f
+	pkill -15 "bash.*\.\/manage.*" -f
 	rm -f $pid_file
 }
 
@@ -45,3 +45,5 @@ elif [ "$1" == "restart" ]; then
 else
 	echo "Usage: manage_my_process {start|stop|restart}"
 fi
+
+exit
