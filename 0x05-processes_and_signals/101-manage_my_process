@@ -25,7 +25,7 @@ function start_p {
 }
 
 function kill_p {
-	pkill -15 "bash.*\.\/manage.*" -f
+	pkill -15 $(echo $pid_file) -f
 	rm -f $pid_file
 }
 
