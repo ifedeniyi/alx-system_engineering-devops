@@ -4,29 +4,54 @@
 int infinite_while(void);
 
 /**
- * Main - Entry point
- * Return - Always 0
+ * main - Entry point, forks 5 new child processes
+ * Return: Always 0
  */
 int main(void)
 {
 	int i = 0;
 
-	for (i = 0; i < 5; i++)
+	if (fork() == 0)
 	{
-		pid_t zombie = fork();
-
-		if (zombie == 0)
+		printf("Zombie process created, PID: %d\n", getpid());
+	}
+	else
+	{
+		if (fork() == 0)
 		{
 			printf("Zombie process created, PID: %d\n", getpid());
-			return (0);
+		}
+		else
+		{
+			if (fork() == 0)
+			{
+				printf("Zombie process created, PID: %d\n", getpid());
+			}
+			else
+			{
+				if (fork() == 0)
+				{
+					printf("Zombie process created, PID: %d\n", getpid());
+				}
+				else
+				{
+					if (fork() == 0)
+					{
+						printf("Zombie process created, PID: %d\n", getpid());
+					}
+					else
+					{
+						infinite_while();
+					}
+				}
+			}
 		}
 	}
-	infinite_while();
 }
 
 /**
  * infinite_while - infinite while loop
- * Return - Always 0
+ * Return: Always 0
  */
 int infinite_while(void)
 {
