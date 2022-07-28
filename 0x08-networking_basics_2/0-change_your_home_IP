@@ -6,5 +6,7 @@
 
 file_path="/etc/hosts"
 
-sed -i '0,/127\.0\.0\.1/s//127.0.0.2/' "$file_path"
-echo -e "8.8.8.8\tfacebook.com" >>"$file_path"
+$(cp "$file_path" ./old)
+sed -i '0,/127\.0\.0\.1.*localhost/s//127.0.0.2\tlocalhost/' "$file_path"
+sed -i 's/.*facebook.*//g' "$file_path"
+echo -e "\n8.8.8.8 \tfacebook.com" >>"$file_path"
