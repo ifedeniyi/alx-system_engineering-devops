@@ -5,8 +5,10 @@
 #    facebook.com resolves to 8.8.8.8.
 
 file_path="/etc/hosts"
+copy_path="~/hosts.new"
 
-$(cp "$file_path" ./old)
-sed -i '0,/127\.0\.0\.1.*localhost/s//127.0.0.2\tlocalhost/' "$file_path"
-sed -i 's/.*facebook.*//g' "$file_path"
-echo -e "\n8.8.8.8 \tfacebook.com" >>"$file_path"
+cp $file_path $copy_path
+sed -i '0,/127\.0\.0\.1.*localhost/s//127.0.0.2\tlocalhost/' "$copy_path"
+sed -i 's/.*facebook.*//g' "$copy_path"
+echo -e "\n8.8.8.8 \tfacebook.com" >>"$copy_path"
+cp -f $copy_path $file_path
